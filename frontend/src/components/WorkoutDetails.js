@@ -1,10 +1,10 @@
-import { useWorkoutsConext } from "../hooks/useWorkoutsContexts"
+import { useWorkoutsContext } from "../hooks/useWorkoutsContexts"
 
 //date fns
 import formatDistanceToNow from 'date-fns/formatDistanceToNow'
 
 const WorkoutDetails = ({ workout }) => {
-    const { dispatch } = useWorkoutsConext()
+    const { dispatch } = useWorkoutsContext()
 
     const handleClick = async () => {
         const response = await fetch('/api/workouts/' + workout._id, {
