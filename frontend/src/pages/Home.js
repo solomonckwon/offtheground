@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react"
+//components
 import WorkoutDetails from "../components/WorkoutDetails"
+import WorkoutForm from "../components/WorkoutForm"
 
 const Home = () => {
 
@@ -20,13 +22,14 @@ const Home = () => {
     //will only fetch once 
 
     return (
-        <div className="Home">
+        <div className="home">
             <div className="workouts">
                 {/* map function goes through the array */}
                 {workouts && workouts.map((workout) => (
                     <WorkoutDetails key={workout._id} workout={workout} />
                 ))}
             </div>
+            <WorkoutForm />
         </div>
     )
 }
