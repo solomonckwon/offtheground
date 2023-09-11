@@ -8,6 +8,14 @@ export const climbsReducer = (state, action) => {
             return {
                 climbs: action.payload
             }
+        case 'CREATE_CLIMB':
+            return {
+                climbs: [action.payload, ...state.climbs]
+            }
+        case 'DELETE_CLIMB':
+            return {
+                climbs: state.workouts.filter((c) => c._id !== action.payload._id)
+            }
         default:
             return state
     }
@@ -20,7 +28,7 @@ export const ClimbsContextProvider = ( {children}) => {
 
     return (
         <ClimbsContext.Provider value = {{...state, dispatch}}>
-            {children}
+            { children }
         </ClimbsContext.Provider>
     )
 }
