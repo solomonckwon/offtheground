@@ -1,8 +1,10 @@
+import { useClimbsContext } from "../hooks/useClimbsContexts";
 
 import formatDistanceToNow from "date-fns/formatDistanceToNow";
 
 const ClimbDetails = ({climb}) => {
-    
+    const { dispatch } = useClimbsContext()
+
 
     return (
         <div className="climb-details">
@@ -13,3 +15,5 @@ const ClimbDetails = ({climb}) => {
         </div>
     )
 }
+
+export default ClimbDetails

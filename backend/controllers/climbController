@@ -4,8 +4,9 @@ const mongoose = require('mongoose')
 const getClimbs = async(req,res) => {
     try{
         const climbs = await Climb.find({}).sort({createdAt: -1})
-        res.status(200).json(workouts)
-    } catch {error} {
+        res.status(200).json(climbs)
+
+    } catch (error) {
         res.status(400).json({error: error.message})
     }
 }
@@ -54,7 +55,7 @@ const deleteClimb = async (req, res) =>{
     }
 }
 
-const updateWorkout = async (req, res) => {
+const updateClimb = async (req, res) => {
     const {id} = req.params
     if(!mongoose.Types.ObjectId(id)){
         return res.status(404).json({error: 'No such climb!'})

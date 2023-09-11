@@ -9,9 +9,9 @@ const {
 
 const router = express.Router()
 
-router.get('/', getClimb)
+router.get('/', getClimbs)
 
-router.get('/:id', getClimbs)
+router.get('/:id', getClimb)
 
 router.post('/', createClimb)
 
