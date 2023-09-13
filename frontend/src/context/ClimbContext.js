@@ -14,14 +14,14 @@ export const climbsReducer = (state, action) => {
             }
         case 'DELETE_CLIMB':
             return {
-                climbs: state.workouts.filter((c) => c._id !== action.payload._id)
+                climbs: state.climbs.filter((c) => c._id !== action.payload._id)
             }
         default:
             return state
     }
 }
 
-export const ClimbsContextProvider = ( {children}) => {
+export const ClimbsContextProvider = ( {children} ) => {
     const [state, dispatch] = useReducer(climbsReducer, {
         climbs: null
     })

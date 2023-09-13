@@ -11,7 +11,7 @@ root.render(
     <WorkoutsContextProvider>
       <ClimbsContextProvider>
         <App />
-      </ClimbsContextProvider>
+    </ClimbsContextProvider>
     </WorkoutsContextProvider>
   </React.StrictMode>
 );
