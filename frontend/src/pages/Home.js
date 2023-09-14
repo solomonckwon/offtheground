@@ -30,12 +30,6 @@ const Home = () => {
                     <ClimbDetails key={climb._id} climb={climb} />
                 ))}
             </div>
-            <div className="workouts">
-                {/* map function goes through the array */}
-                {/* {workouts && workouts.map((workout) => (
-                    <WorkoutDetails key={workout._id} workout={workout} />
-                ))} */}
-            </div>
             <WorkoutForm />
             <StarRating></StarRating>
         </div>

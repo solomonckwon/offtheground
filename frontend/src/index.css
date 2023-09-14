@@ -131,6 +131,17 @@ input.error {
 }
 
 /* star rating css */
-input[type="radio"] {
+
+.star-label {
+  display: inline;
+}
+
+.rating {
   display: none;
+}
+
+.star {
+  /* display: ; */
+  cursor:pointer;
+  transition: color 200ms;
 }
