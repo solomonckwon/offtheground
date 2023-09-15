@@ -40,7 +40,7 @@ const createClimb = async (req, res) =>{
 
 const deleteClimb = async (req, res) =>{
     const { id } = req.params
-    if(!mongoose.Types.ObjectId(id)){
+    if(!mongoose.Types.ObjectId.isValid(id)){
         return res.status(404).json({error: 'No such climb!'})
     }
 
@@ -57,7 +57,7 @@ const deleteClimb = async (req, res) =>{
 
 const updateClimb = async (req, res) => {
     const {id} = req.params
-    if(!mongoose.Types.ObjectId(id)){
+    if(!mongoose.Types.ObjectId.isValid(id)){
         return res.status(404).json({error: 'No such climb!'})
     }
 
