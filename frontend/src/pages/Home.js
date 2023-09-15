@@ -4,6 +4,8 @@ import { useClimbsContext } from "../hooks/useClimbsContexts"
 //components
 import WorkoutDetails from "../components/WorkoutDetails"
 import WorkoutForm from "../components/WorkoutForm"
+
+import ClimbForm from "../components/ClimbForm"
 import ClimbDetails from "../components/ClimbDetails"
 import StarRating from "../components/StarRating"
 
@@ -30,8 +32,7 @@ const Home = () => {
                     <ClimbDetails key={climb._id} climb={climb} />
                 ))}
             </div>
-            <WorkoutForm />
-            <StarRating></StarRating>
+            <ClimbForm/>
         </div>
     )
 }
