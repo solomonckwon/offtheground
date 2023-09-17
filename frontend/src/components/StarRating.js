@@ -1,9 +1,13 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { FaStar } from 'react-icons/fa'
 
-const StarRating = () => {
+const StarRating = ({climb}) => {
     const [rating, setRating] = useState(null)
     const [hover, setHover] = useState(null)
+
+    useEffect(() => {
+        setRating(climb.priority)
+    }, [rating])
 
     return (
         <div>

@@ -17,7 +17,9 @@ const climbSchema = new Schema({
     },
     priority: {
         type: Number,
-        required: false
+        required: true,
+        max: 5,
+        min: 0
     }
 }, {timestamps: true})
 

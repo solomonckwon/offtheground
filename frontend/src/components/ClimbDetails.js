@@ -23,7 +23,7 @@ const ClimbDetails = ({climb}) => {
             <p><strong>Grade: </strong>V{climb.grade}</p>
             <p><strong>Location: </strong>{climb.location}</p>
             <p>{formatDistanceToNow(new Date(climb.createdAt), { addSuffix: true })}</p>
-            <StarRating></StarRating>
+            <StarRating climb={climb}/>
             <span className="material-symbols-outlined" onClick={handleClick}>delete</span>
         </div>
     )
