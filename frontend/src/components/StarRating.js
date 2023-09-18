@@ -1,9 +1,14 @@
+import { useClimbsContext } from '../hooks/useClimbsContexts'
+
 import React, { useEffect, useState } from 'react'
 import { FaStar } from 'react-icons/fa'
 
 const StarRating = ({climb}) => {
     const [rating, setRating] = useState(null)
     const [hover, setHover] = useState(null)
+    const [ id, setID ] = useState(null)
+
+    const { dispatch } = useClimbsContext()
 
     const handleSubmit = async (value) => {
 
@@ -14,12 +19,12 @@ const StarRating = ({climb}) => {
             name: climb.name, 
             grade: climb.grade, 
             location: climb.location, 
-            priority: rating 
+            priority: value 
         }
    
         console.log(editedClimb)
         
-        const response = await fetch('/api/climbs/${climb._id}' , {
+        const response = await fetch(`/api/climbs/${climb._id}` , {
             method: "PATCH",
             body: JSON.stringify(editedClimb),
             headers: {
@@ -30,12 +35,13 @@ const StarRating = ({climb}) => {
         const json = await response.json()
 
         if(response.ok) {
-            dispatchEvent({type: "EDIT_CLIMB", payload: json})
+            dispatch({type: "EDIT_CLIMB", payload: json})
         }
     }
 
     useEffect(() => {
         setRating(climb.priority)
+        setID(climb._id)
     }, [])
 
     return (
@@ -44,7 +50,7 @@ const StarRating = ({climb}) => {
                 const ratingValue = iterator + 1
 
                 return (
-                    <label className='star-label'>
+                    <label className='star-label' key={ratingValue}>
                         <input 
                             type='radio'  
                             className='rating'

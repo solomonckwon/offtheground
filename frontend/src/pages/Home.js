@@ -1,9 +1,7 @@
 import { useEffect } from "react"
-import { useWorkoutsContext } from "../hooks/useWorkoutsContexts"
+
 import { useClimbsContext } from "../hooks/useClimbsContexts"
 //components
-import WorkoutDetails from "../components/WorkoutDetails"
-import WorkoutForm from "../components/WorkoutForm"
 
 import ClimbForm from "../components/ClimbForm"
 import ClimbDetails from "../components/ClimbDetails"
