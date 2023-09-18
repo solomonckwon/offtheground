@@ -27,7 +27,8 @@ header a {
   text-decoration: none;
 }
 .pages{
-  max-width: 1400px;
+  max-width: 100%;
+  max-height: 100vh;
   padding: 20px;
   margin: 0 auto;
 }
@@ -144,4 +145,14 @@ input.error {
   /* display: ; */
   cursor:pointer;
   transition: color 200ms;
+}
+
+/* landing page */
+.landing-page {
+  /* align-items: center; */
+
+  display: flex;
+  justify-content: center;
+
+  
 }

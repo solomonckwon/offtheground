@@ -8,8 +8,8 @@ const Navbar = () => {
                     <h1>Off the Ground</h1>
                 </Link>
 
-                <Link to='/'>
-                    <h2>Off the Ground</h2>
+                <Link to='/home'>
+                    <h2>Climbs</h2>
                 </Link>
                 
             </div>
