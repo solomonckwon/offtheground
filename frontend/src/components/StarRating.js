@@ -5,9 +5,38 @@ const StarRating = ({climb}) => {
     const [rating, setRating] = useState(null)
     const [hover, setHover] = useState(null)
 
+    const handleSubmit = async (value) => {
+
+        setRating(value)
+
+        
+        const editedClimb = { 
+            name: climb.name, 
+            grade: climb.grade, 
+            location: climb.location, 
+            priority: rating 
+        }
+   
+        console.log(editedClimb)
+        
+        const response = await fetch('/api/climbs/${climb._id}' , {
+            method: "PATCH",
+            body: JSON.stringify(editedClimb),
+            headers: {
+                "Content-Type": "application/json",
+            }
+        })
+
+        const json = await response.json()
+
+        if(response.ok) {
+            dispatchEvent({type: "EDIT_CLIMB", payload: json})
+        }
+    }
+
     useEffect(() => {
         setRating(climb.priority)
-    }, [rating])
+    }, [])
 
     return (
         <div>
@@ -20,7 +49,7 @@ const StarRating = ({climb}) => {
                             type='radio'  
                             className='rating'
                             value={ratingValue} 
-                            onClick={()=>setRating(ratingValue)}
+                            onClick={()=>handleSubmit(ratingValue)}
                         />
                         <FaStar 
                             className='star' 

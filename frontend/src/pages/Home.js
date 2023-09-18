@@ -7,7 +7,6 @@ import WorkoutForm from "../components/WorkoutForm"
 
 import ClimbForm from "../components/ClimbForm"
 import ClimbDetails from "../components/ClimbDetails"
-import StarRating from "../components/StarRating"
 
 const Home = () => {
     const { climbs, dispatch } = useClimbsContext()
