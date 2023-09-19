@@ -5,7 +5,7 @@ const {
     createClimb,
     deleteClimb,
     updateClimb
-} = require('../controllers/climbController')
+} = require('../controllers/climbController.js')
 
 const router = express.Router()
 

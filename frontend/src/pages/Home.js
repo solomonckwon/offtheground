@@ -1,11 +1,10 @@
 import { useEffect } from "react"
-import { useWorkoutsContext } from "../hooks/useWorkoutsContexts"
+
 import { useClimbsContext } from "../hooks/useClimbsContexts"
 //components
-import WorkoutDetails from "../components/WorkoutDetails"
-import WorkoutForm from "../components/WorkoutForm"
+
+import ClimbForm from "../components/ClimbForm"
 import ClimbDetails from "../components/ClimbDetails"
-import StarRating from "../components/StarRating"
 
 const Home = () => {
     const { climbs, dispatch } = useClimbsContext()
@@ -30,14 +29,7 @@ const Home = () => {
                     <ClimbDetails key={climb._id} climb={climb} />
                 ))}
             </div>
-            <div className="workouts">
-                {/* map function goes through the array */}
-                {/* {workouts && workouts.map((workout) => (
-                    <WorkoutDetails key={workout._id} workout={workout} />
-                ))} */}
-            </div>
-            <WorkoutForm />
-            <StarRating></StarRating>
+            <ClimbForm/>
         </div>
     )
 }

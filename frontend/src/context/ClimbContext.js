@@ -16,6 +16,16 @@ export const climbsReducer = (state, action) => {
             return {
                 climbs: state.climbs.filter((c) => c._id !== action.payload._id)
             }
+        case 'EDIT_CLIMB':
+            return {
+                climbs: state.climbs.map((climb) => {
+                    if(climb._id === action.payload._id) {
+                        return action.payload
+                    } else {
+                        return climb
+                    }
+                })
+            }
         default:
             return state
     }
